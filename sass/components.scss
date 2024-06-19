@@ -1,0 +1,144 @@
+
+header {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+
+header h1 {
+    font-family: $font-primary; 
+    color: black; 
+    font-size: 2rem; 
+    margin: 0; 
+    
+}
+
+/* Styles pour la section de localisation */
+.location {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: rgb(220, 220, 220); 
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.location .location-text {
+    font-family: $font-secondary; /* Police pour le texte */
+    color: #333; /* Couleur du texte */
+    font-size: 1.2rem; /* Taille du texte */
+    margin-left: 30px;
+}
+.reservation {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: rgb(235, 235, 235);
+    padding: 2rem; 
+    text-align: center;
+    margin-top: 5px; 
+}
+.reservation h2 {
+    font-family: $font-secondary;
+    margin-bottom: 1rem; 
+}
+.reservation p {
+    font-family: $font-secondary; 
+    color: rgb(53, 53, 53);
+    margin-bottom: 1.5rem; 
+    font-size: 20px;
+    
+}
+.bold-h2 {
+    font: weight 800px;
+    -webkit-text-stroke: 1px black;
+    line-height: 25px;
+    
+}
+.explore-btn {
+    background: linear-gradient(135deg,#FF79DA, #9356DC, ); 
+    border: none; 
+    padding: 1rem 2rem; 
+    font-size: 1rem; 
+    border-radius: 2rem; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    color: white; 
+    cursor: pointer; 
+    transition: transform 0.2s, box-shadow 0.2s; 
+}
+.explore-btn:hover {
+    transform: translateY(-2px); 
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+// _components.scss
+.fonctionnement {
+    background-color: white;
+    padding: 2rem;
+}
+.fonctionnement h2 {
+    
+    text-align: left;
+    font: weight 800px;
+    -webkit-text-stroke: 1px black;
+}
+    .buttons-container {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .fonctionnement-btn {
+        background-color: rgb(235, 235, 235);
+        color: #333;
+        padding: 2rem;
+        border: none;
+        border-radius: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 2.2rem; 
+        font-size: 1rem; 
+        transition: transform 0.2s, box-shadow 0.2s;
+        width: 24rem;
+        box-shadow: 
+        0px -2px 6px rgba(0, 0, 0, 0.1), 
+        0px 8px 10px rgba(0, 0, 0, 0.1); 
+
+        
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        .icon {
+            color: gray;
+        }
+        .btn-text {
+            font-family: $font-secondary;
+            font-weight: 900;
+            font-size: 1.3rem;
+            color: #333;
+        }
+        &:nth-child(3) .icon {
+            color: $color-primary; 
+        }
+     
+    }
+
+
+
+@media (min-width: $breakpoint-tablet) {
+    header h1 {
+        font-size: 2.5rem; 
+    }
+}
+
+@media (min-width: $breakpoint-desktop) {
+    header h1 {
+        font-size: 3rem; 
+    }
+}

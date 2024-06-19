@@ -1,0 +1,30 @@
+
+/* Styles pour les tablettes */
+@media (min-width: $breakpoint-tablet) {
+    body {
+        padding: 2rem;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        margin-bottom: 1.5rem;
+    }
+
+    a {
+        font-size: 1.1rem;
+    }
+}
+
+/* Styles pour les ordinateurs de bureau */
+@media (min-width: $breakpoint-desktop) {
+    body {
+        padding: 3rem;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        margin-bottom: 2rem;
+    }
+
+    a {
+        font-size: 1.2rem;
+    }
+}

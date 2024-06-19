@@ -1,0 +1,8 @@
+/* Fichier: _mixins.scss */
+@mixin primary-text {
+    font-family: $font-primary;
+}
+
+@mixin secondary-background {
+    color: black;
+}

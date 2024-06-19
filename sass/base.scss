@@ -1,0 +1,83 @@
+/* Fichier: _base.scss */
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px; /* Base pour rem */
+}
+
+body {
+    font-family: $font-secondary; /* Utilise Roboto */
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+        /* Styles pour les tablettes */
+        @media (min-width: $breakpoint-tablet) {
+            padding: 2rem;
+        }
+    
+        /* Styles pour les ordinateurs de bureau */
+        @media (min-width: $breakpoint-desktop) {
+            padding: 3rem;
+        }
+}
+
+/* Titres */
+h1{
+    @include primary-text;
+    margin-top: 0;
+    margin-bottom: 1rem;
+        /* Styles pour les tablettes */
+        @media (min-width: $breakpoint-tablet) {
+            padding: 2rem;
+        }
+    
+        /* Styles pour les ordinateurs de bureau */
+        @media (min-width: $breakpoint-desktop) {
+            padding: 3rem;
+        }
+}
+h2{
+    font-family: $font-secondary;
+}
+
+/* Liens */
+a {
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: $color-tertiary;
+        text-decoration: underline;
+    }
+        /* Styles pour les tablettes */
+        @media (min-width: $breakpoint-tablet) {
+            padding: 2rem;
+        }
+    
+        /* Styles pour les ordinateurs de bureau */
+        @media (min-width: $breakpoint-desktop) {
+            padding: 3rem;
+        }
+}
+
+/* Classes de couleur */
+.primary-background {
+    color: black;
+}
+
+.secondary-background {
+    @include secondary-background;
+}
+
+.tertiary-background {
+    background-color: $color-tertiary;
+    color: white;
+}
