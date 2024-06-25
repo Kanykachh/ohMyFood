@@ -128,68 +128,178 @@ header h1 {
         }
      
     }
-    // _components.scss
+
 .restaurants {
     padding: 2rem;
-    background-color: #f9f9f9;
+    background-color: rgb(235, 235, 235);
     text-align: center;
 
     h2 {
-        font-family: $font-secondary;
-        margin-bottom: 1.5rem;
-        font-size: 2rem;
-        color: $color-primary;
+        text-align: left;
+    font: weight 800px;
+    -webkit-text-stroke: 0.1px black;
+    margin-bottom: 20px;
     }
 
     .card {
         background-color: white;
         border-radius: 1rem;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         margin-bottom: 1.5rem;
-        padding: 1rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         transition: box-shadow 0.3s ease-in-out;
+        position: relative;
 
         img {
             width: 100%;
-            height: auto;
-            border-radius: 1rem;
+            height: 12rem;
+            border-radius: 1rem,;
+            border-bottom-left-radius: 0rem ;
+            border-bottom-right-radius: 0rem;  
+             object-fit: cover;          
+        }
+        .new-badge {
+            display: flex;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: #99E2D0;
+            color: #008766;
+            padding: 0.2rem 1rem;
+            font-family: $font-secondary;
+            font-weight: bold;
+            font-size: 1rem;
+            border-radius: 0.2rem;
         }
 
         .card-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
             padding: 1rem;
-            text-align: center;
-
+            width: 100%;
+        
             h3 {
                 font-family: $font-secondary;
-                font-size: 1.5rem;
-                margin-bottom: 0.5rem;
+                font: weight 800px;
+    -webkit-text-stroke: 0.4px black;
+               
             }
 
             p {
-                font-family: $font-primary;
-                font-size: 1rem;
-                color: #555;
+                font-family: $font-secondary;
+                display: flex;
+                flex-direction: row;
             }
 
             .like-icon {
-                font-size: 2rem;
-                color: #ccc; /* Couleur initiale du cœur */
-                cursor: pointer;
+                position: relative;
+                width: 2rem;
+                height: 2rem;
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
-                transition: color 0.3s ease-in-out; /* Transition douce de la couleur */
-
-                &:hover {
-                    color: $color-primary; /* Change la couleur en violet au survol */
-                }
+                cursor: pointer;
             }
+            
+            .like-icon::before {
+                content: '\2661'; /* Cœur vide (♡) */
+                font-size: 1.6rem;
+                color: grey; /* Couleur initiale du cœur */
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: opacity 0.3s ease-in-out;
+            }
+            
+            .like-icon::after {
+                content: '\2665'; /* Cœur plein (♥) */
+                font-size: 1.6rem;
+                background: linear-gradient(45deg, #FF79DA, #9356DC ); /* Dégradé */
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0; /* Le cœur plein est caché initialement */
+                transition: opacity 0.3s ease-in-out;
+            }
+            
+            .like-icon:hover::before {
+                opacity: 0; /* Cache le cœur vide au survol */
+            }
+            
+            .like-icon:hover::after {
+                opacity: 1; /* Affiche le cœur plein au survol */
+            }
+            
+            
+            
+        }
+        .text-container {
+            display: flex;
+            flex-direction: column;
+         
         }
     }
 }
+.site-footer {
+    background-color: #333; /* Gris foncé */
+    color: white; /* Texte blanc */
+    padding: 2rem;
+    text-align: center;
+    font-family: $font-secondary; /* Assurez-vous que cette variable est définie dans vos styles globaux */
+
+    h4 {
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+        font-family: $font-primary;
+        display: flex;
+        align-items: flex-start;
+        margin-left: 2rem;
+    }
+
+    .footer-links {
+        margin-bottom: 2rem;
+        margin-left: 2rem;
+        font-size: 1.3rem;
+    }
+
+    .footer-link {
+        display: flex;
+        justify-content: left;
+        gap: 0.3rem; /* Espace entre l'icône et le texte */
+        margin-bottom: 0.5rem;
+        
+
+        .material-symbols-outlined {
+            font-size: 1.5rem; /* Taille des icônes */
+        }
+    }
+        a {
+            display: flex;
+            color: white; /* Lien en blanc */
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline; /* Souligne le texte au survol */
+            }
+        }
+    
+}
+
 
 
 
