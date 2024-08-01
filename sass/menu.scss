@@ -41,7 +41,7 @@
     padding: 20px; 
     margin-top: -60px; 
     position: relative; 
-    z-index: 1; 
+    z-index: 1;
 }
 
 .title {
@@ -112,48 +112,103 @@
 .menu-item {
     background-color: white;
     color: #333;
-    padding: 1rem;
     border: none;
     border-radius: 1rem; 
     font-size: 1rem;
     width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     font-family: $font-secondary;
+    box-shadow: 2px 2px 2px lightgrey;
+    overflow: hidden;
+    &:hover {
+        cursor: pointer;
+        .box-check{
+            margin-right: 0;
+        };
+        i{
+            animation: rotate 1.5s forwards;
+        };
+    };
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+    animation-fill-mode: both; 
+    };
+    // Boucle SCSS pour générer les nth-child avec des délais d'animation
+@for $i from 1 through 10 {
+    .menu-item:nth-child(#{$i}) {
+        animation-delay: 0.3s * $i;
+    }
 }
 
-.menu-item .item-title {
-    font-size: 1.3rem;
-    -webkit-text-stroke: 0.7px black;
-}
-
-.menu-item .item-details {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-top: 5px;
-}
-
-.menu-item .item-description {
-    font-size: 1rem;
-    color: #666;
-    display: flex;
-    justify-content: flex-start;
-}
-
-.menu-item .item-price {
-    font-size: 1em;
-    font-weight: bold;
-    align-self: flex-end;
-    -webkit-text-stroke: 0.1px black;
-}
-
-
+    .menu-description {
+        padding: 0.5rem;
+        flex: 1;
+        overflow: hidden;
+        .item-title {
+            font-size: 1.3rem;
+            margin: 0;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            
+        };
+        .item-description {
+            font-size: 1rem;
+            color: #666;
+            margin: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        };    
+    }
 .menu-items {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    .item-price {
+        font-size: 1em;
+        font-weight: bold;
+       margin-left: auto;
+        -webkit-text-stroke: 0.1px black;
+        align-self: flex-end;
+        padding: 1rem;
+    }
+}
+
+.box-check{
+    background-color: $color-tertiary;
+    border-radius: 0 1rem 1rem 0;
+    padding: 1rem;
+    margin-right: -4rem; 
+    transition: margin-right 0.5s;
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    i {
+    display: grid;
+    place-items: center;
+    background-color: #fff;
+    aspect-ratio: 1;
+    width: 2rem;
+    border-radius: 1rem;
+    color: $color-tertiary;
+    @keyframes rotate {
+        0% {
+            transform: rotate(180deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }; 
+    }
+    };
 }
 .underline {
     width: 50px; /* Définir la largeur du trait */
@@ -175,4 +230,5 @@
     align-items: center;
     padding: 2rem;
 }
+
 

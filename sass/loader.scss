@@ -1,0 +1,66 @@
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    z-index: 9999;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    animation: hideLoader 2s forwards; /* Animation pour cacher le loader après 2 secondes */
+}
+
+@keyframes hideLoader {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #d64cdd;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+body {
+    overflow: hidden; /* Empêche le défilement pendant le chargement */
+    height: 100vh;
+}
+
+body.loaded {
+    overflow: auto; /* Réactive le défilement après le chargement */
+    height: auto;
+}
+
+.main-content {
+    opacity: 0;
+    visibility: hidden;
+    animation: showContent 0.5s ease 2s forwards; /* L'animation commence après 2 secondes */
+}
+
+@keyframes showContent {
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+
