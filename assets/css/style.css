@@ -160,12 +160,21 @@ a:hover {
     margin-left: 5rem;
   }
   .restaurants .cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
+    grid-gap: 1rem;
+    padding: 2rem;
   }
-  .restaurants .card {
-    flex-basis: calc(40% - 1rem);
+  .restaurants .cards .card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  .restaurants .cards .card-link:hover {
+    cursor: pointer; /* Affiche un curseur de pointeur sur le survol */
+  }
+  .restaurants .cards .card-link:hover .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   .site-footer {
     display: flex;
@@ -214,7 +223,6 @@ header h1 {
   margin: 0;
 }
 
-/* Styles pour la section de localisation */
 .location {
   display: flex;
   justify-content: center;
@@ -273,21 +281,15 @@ header h1 {
   color: white;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
-  display: inline-block; /* Assurez-vous que le bouton est inline-block pour que le lien s'affiche correctement */
-  text-align: center; /* Centrer le texte à l'intérieur */
-}
-
-.explore-btn a {
-  text-decoration: white;
-  color: inherit;
-  display: block;
-  width: 100%;
-  height: 100%;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
 }
 
 .explore-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
 }
 
 .fonctionnement {
@@ -480,7 +482,7 @@ header h1 {
   color: white; /* Texte blanc */
   padding: 2rem;
   text-align: center;
-  font-family: "Roboto", sans-serif; /* Assurez-vous que cette variable est définie dans vos styles globaux */
+  font-family: "Roboto", sans-serif;
 }
 .site-footer h4 {
   margin-bottom: 1.5rem;
@@ -506,11 +508,23 @@ header h1 {
 }
 .site-footer a {
   display: flex;
-  color: white; /* Lien en blanc */
+  color: white;
   text-decoration: none;
 }
 .site-footer a:hover {
-  text-decoration: underline; /* Souligne le texte au survol */
+  text-decoration: underline;
+}
+
+.cards .card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block; /* Rend l'élément <a> comme un bloc */
+}
+.cards .card-link:hover {
+  cursor: pointer;
+}
+.cards .card-link:hover .card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .loader-container {
@@ -527,7 +541,7 @@ header h1 {
   opacity: 1;
   visibility: visible;
   transition: opacity 0.5s ease, visibility 0.5s ease;
-  animation: hideLoader 2s forwards; /* Animation pour cacher le loader après 2 secondes */
+  animation: hideLoader 1s forwards; /* Animation pour cacher le loader après 2 secondes */
 }
 
 @keyframes hideLoader {
@@ -546,7 +560,7 @@ header h1 {
   border-top: 16px solid #d64cdd;
   width: 120px;
   height: 120px;
-  animation: spin 2s linear infinite;
+  animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
@@ -570,7 +584,7 @@ body.loaded {
 .main-content {
   opacity: 0;
   visibility: hidden;
-  animation: showContent 0.5s ease 2s forwards; /* L'animation commence après 2 secondes */
+  animation: showContent 0.5s ease 1s forwards; /* L'animation commence après 2 secondes */
 }
 
 @keyframes showContent {

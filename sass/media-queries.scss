@@ -74,16 +74,28 @@
             font-size: 1.8rem;
             margin-left: 5rem;
         }
-        .cards {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
         }
-    
-        .card {
-            flex-basis: calc(40% - 1rem);
+        .restaurants .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
+            grid-gap: 1rem; 
+            padding: 2rem;
+            .card-link {
+                text-decoration: none; 
+                color: inherit; 
+                display: block; 
+            }
+            
+            .card-link:hover {
+                cursor: pointer; /* Affiche un curseur de pointeur sur le survol */
+            }
+            
+            
+            .card-link:hover .card {
+                
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
         }
-    }
   
     .site-footer {
         display: flex;
